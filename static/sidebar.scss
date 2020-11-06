@@ -1,0 +1,129 @@
+.sidebar {
+  background-color: $tolopea;
+  color: $saltbox;
+  width: 263px;
+  height: auto;
+
+  .sidebar__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 0 20px 45px;
+
+    .item {
+      padding-top: 20px;
+
+      .item__link {
+        color: $saltbox;
+        text-decoration: none;
+        @include font($sanfranciscotext, 13px, 500);
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          color: $white;
+
+          svg {
+            path, rect {
+              stroke: $white;
+            }
+          }
+        }
+
+        &.live {
+
+          animation: flash 1.5s linear infinite;
+
+          .item__title {
+            color: $wildwatermelon;
+
+            svg {
+              path, rect {
+                stroke: $wildwatermelon;
+              }
+            }
+          }
+
+          &.router-link-exact-active {
+            svg {
+              path, rect {
+                stroke: $wildwatermelon;
+              }
+            }
+          }
+
+          &:hover {
+            color: $white;
+
+            svg {
+              path, rect {
+                stroke: $white;
+              }
+            }
+
+            .item__title {
+              color: $white;
+            }
+          }
+        }
+
+        &.router-link-exact-active {
+          color: white;
+
+          svg {
+            path, rect {
+              stroke: $white;
+            }
+          }
+        }
+
+        &.router-link-active {
+          color: white;
+
+          svg {
+            path, rect {
+              stroke: $white;
+            }
+          }
+        }
+
+        .item__title {
+          margin-left: 12px;
+
+          &:hover {
+            color: $white;
+
+            svg {
+              path, rect {
+                stroke: $white;
+              }
+            }
+          }
+        }
+      }
+
+      .submenu {
+        list-style-type: disc;
+        display: none;
+
+        &.open {
+          animation-duration: 0.1s;
+          animation-name: show;
+          display: block;
+        }
+
+        .submenu__item {
+          padding-top: 20px;
+          margin-left: 10px;
+
+          &:hover {
+            color: white !important;
+          }
+
+          &:hover .item__link {
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
+}

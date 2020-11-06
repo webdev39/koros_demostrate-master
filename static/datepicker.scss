@@ -1,0 +1,24 @@
+.qs-datepicker {
+  .qs-controls {
+    background: $honeyflower;
+    padding: 7px 0;
+  }
+}
+
+.qs-datepicker-container {
+  background: $martinique;
+  color: $white;
+  @include sanFranciscoText(15px, 500)
+}
+
+.qs-datepicker {
+  .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover {
+    background: $honeyflower;
+  }
+}
+
+.qs-datepicker {
+  .qs-square.qs-active {
+    background: $saltbox;
+  }
+}

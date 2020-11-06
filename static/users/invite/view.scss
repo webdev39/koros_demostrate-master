@@ -1,0 +1,142 @@
+.invite_view {
+  .block {
+    width: auto;
+    height: fit-content;
+    padding-bottom: 60px;
+    margin-top: 0;
+    background-color: $victoria;
+
+    &.block_double {
+      .avatar-wrap {
+        display: flex;
+        margin-top: 60px;
+
+        .left, .right {
+          width: 365px;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .right {
+          border-left: 1px solid $kimberly;
+
+          .block__info {
+            .row {
+              margin-left: 80px;
+            }
+          }
+        }
+
+        .avatar {
+          margin-top: 0;
+        }
+      }
+
+      .block__info {
+        &.common {
+          align-self: start;
+          margin-left: 0;
+        }
+
+        .row {
+          width: auto;
+
+          &.row_bio {
+            width: 749px;
+
+            .param {
+              flex: auto;
+              width: 118px;
+            }
+
+            .value {
+              width: 647px;
+              flex: auto;
+            }
+          }
+
+          .value {
+            margin-left: 27px;
+          }
+        }
+      }
+
+      .remove {
+        margin-left: 20px;
+      }
+    }
+
+    .avatar {
+      margin-top: 30px;
+    }
+
+    .topRight {
+      align-self: flex-end;
+      margin-top: 20px;
+      margin-right: -35px;
+      width: fit-content;
+      display: flex;
+
+      &.topRight_instructor {
+        margin-right: -65px;
+      }
+
+      .close {
+        float: right;
+        cursor: pointer;
+        font-size: 29px;
+        margin-top: -5px;
+      }
+    }
+
+    .title {
+      margin-top: 0;
+      color: $white;
+      @include font($avenirmedium, 20px, 500);
+    }
+
+    .block__geo {
+      color: $bilobaflower;
+      @include font($avenirheavy, 15px, 800);
+    }
+
+    .block__info {
+      width: 360px;
+
+      .row {
+        .param {
+          color: $bilobaflower;
+          @include font($sanfranciscotext, 13px, 500);
+        }
+
+        .value {
+          flex: 2;
+          margin-left: 35px;
+        }
+      }
+    }
+
+    .resetPassword, .remove, .deactivate {
+      width: 161px;
+      height: 40px;
+      box-shadow: 0 16px 10px -11px rgba(63, 63, 63, 0.25);
+      border-radius: 28px;
+      background-color: $white;
+      color: $blackcurrant;
+      margin-top: 55px;
+    }
+
+    .remove {
+      margin-left: 20px;
+      background-color: $deluge;
+      color: $white;
+    }
+
+    .block__edit_link {
+      align-self: auto;
+      margin: 0;
+      margin-right: 25px;
+    }
+  }
+}

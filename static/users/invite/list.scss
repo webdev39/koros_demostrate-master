@@ -1,0 +1,38 @@
+.users {
+  .users__second {
+    .body {
+      .users__table {
+        * {
+          outline: none;
+        }
+
+        .row {
+          width: auto;
+        }
+
+        .table-responsive {
+          table {
+            tr {
+              td {
+                .user-type {
+
+                  &.admin {
+                    color: $wildwatermelon;
+                  }
+
+                  &.user {
+                    color: $maverick;
+                  }
+
+                  &.instructor {
+                    color: $dodgerblue;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

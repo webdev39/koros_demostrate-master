@@ -1,0 +1,26 @@
+/* .wrap = замена для .content */
+/*.app.is-desktop:not(.is-admin) .wrap { display: flex; justify-content: center; width: 100%; padding: 50px 16px 110px 30px; }
+.app.is-desktop:not(.is-admin) .wrap > * { width: 100%; max-width: 1200px; }
+.app.is-desktop .category-page { width: 100%; }*/
+
+/* @note Disable old layout css */
+.app .wrap .content-desktop { margin: 0 auto; /*width: 827px;*/ }
+.app .wrap .sidebar-filter { /*margin: auto;*/ }
+@media only screen and (max-width: 1135px) { .wrap .sidebar-filter { width: 100% } }
+
+/* @note New layout rules */
+.app .wrap { display: flex; justify-content: center; width: 100%; margin: 0 auto; box-sizing: border-box; }
+@media only screen and (max-width: 1135px) { .app .wrap.reduce-width { max-width: 880px; /*827px*/ } }
+
+.app.is-desktop .wrap { padding: 50px 30px 110px 30px; }
+.app.is-mobile .padding-layer { padding: 0 20px; }
+
+
+.app .wrap > * { width: 100%; max-width: 1200px; }
+.app.is-admin .wrap { justify-content: flex-start; }
+.app.is-admin .wrap .content-desktop { margin: 0; }
+.app .category-page { width: 100%; }
+
+/*.app.is-admin { min-width: 1200px; }*/
+
+/*.app .layout-sidebar { display: flex; }*/

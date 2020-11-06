@@ -1,0 +1,103 @@
+.class-summary {
+
+  .class-thumbnail {
+    width: 325px;
+    height: 238px;
+    border-radius: 10px;
+    position: relative;
+    display: block;
+    background-size: cover;
+    background-position: center center;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 7px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .player-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .status {
+      position: absolute;
+      border-radius: 10px;
+      padding: 3px 10px;
+
+      &.live {
+        @include font($avenirheavy, 11px, 800);
+        left: 18px;
+        top: 15px;
+        background-color: $wildwatermelon;
+      }
+
+      &.soon {
+        @include font($helvetica, 13px, 700);
+        background-color: rgba(185, 150, 255, 0.5);
+        right: 18px;
+        top: 15px;
+      }
+
+    }
+
+    .class-action {
+      right: 18px;
+      top: 15px;
+      z-index: 1;
+    }
+
+    .category {
+      position: absolute;
+      left: 18px;
+      top: 15px;
+      text-transform: uppercase;
+      @include font($avenirmedium, 18px, 500);
+    }
+  }
+
+  .class-info {
+    position: absolute;
+    left: 18px;
+    bottom: 15px;
+
+    .class-name {
+      @include font($avenirmedium, 18px, 500);
+      margin-bottom: 5px;
+    }
+
+    .class-level {
+      @include font($helvetica, 13px, 400);
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .class-duration {
+    position: absolute;
+    right: 18px;
+    bottom: 15px;
+    @include font($avenirmedium, 15px, 500);
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .class-summary {
+
+    .class-thumbnail {
+      width: 303px;
+      height: 222px;
+    }
+  }
+}

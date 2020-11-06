@@ -1,0 +1,209 @@
+.categories {
+  padding: 40px;
+  width: inherit;
+
+  .upcoming_liveclasses__wrap {
+    max-width: calc(100vw - 350px);
+    overflow-y: auto;
+  }
+
+  .categories__header {
+    width: auto;
+    height: 28px;
+    color: $white;
+    @include font($avenirmedium, 22px, 500);
+  }
+
+  .categories__block {
+    display: block;
+    @include font($avenirheavy, 17px, 800);
+    text-transform: uppercase;
+    overflow: hidden;
+    justify-content: space-between;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: -o-grab;
+    cursor: grab;
+    white-space: nowrap;
+
+    &:active {
+      cursor: -webkit-grabbing;
+      cursor: -moz-grabbing;
+      cursor: -o-grabbing;
+      cursor: grabbing;
+    }
+
+    .block__element_wrap {
+      display: inline-block;
+
+      .block__element {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .image {
+          width: 225px;
+          height: 194px;
+        }
+
+        .text {
+          margin-top: 20px;
+          cursor: pointer;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .upcoming_liveclasses__header {
+    height: 28px;
+    color: $white;
+    @include font($avenirmedium, 22px, 500);
+    display: flex;
+    justify-content: space-between;
+
+    .see_all {
+      color: #f64f63;
+      align-self: flex-end;
+      @include font($helvetica, 13px, 500);
+      cursor: pointer;
+    }
+  }
+
+  .upcoming_liveclasses__block {
+    display: flex;
+    justify-content: center;
+    @include font($avenirheavy, 17px, 800);
+    overflow: hidden;
+
+    .upcoming_liveclasses__element {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      margin-right: 15px;
+
+      .image {
+        width: 325px;
+        height: 238px;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        justify-content: space-between;
+        border-radius: 8px;
+
+        .top {
+          height: 40px;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+
+          .live {
+            background-color: $wildwatermelon;
+            border-radius: 10px;
+            padding-top: 3px;
+            width: 44px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            @include font($avenirmedium, 11px, 800);
+          }
+
+          .coming_days {
+            background-color: $perfume;
+            border-radius: 10px;
+            width: 125px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            @include font($helvetica, 13px, 800);
+          }
+        }
+
+        .bottom {
+          // align-self: end;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+
+          .left {
+            .weeks {
+              @include font($avenirmedium, 18px, 500);
+            }
+
+            .level {
+              label {
+                @include font($helvetica, 13px, 500);
+              }
+
+              .text {
+                @include font($helvetica, 13px, 800);
+              }
+            }
+          }
+
+          .right {
+            align-self: flex-end;
+          }
+
+          .right {
+
+          }
+
+        }
+
+        .play_button {
+
+        }
+      }
+
+      .instructor {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-self: baseline;
+        position: relative;
+
+        .photo {
+          width: 40px;
+          height: 40px;
+
+          &.absolute {
+            position: absolute;
+            left: 10px;
+            z-index: 1;
+          }
+        }
+
+        .name {
+          margin-left: 15px;
+          @include font($avenirheavy, 15px, 500);
+
+          &.absolute {
+            margin-left: 25px;
+          }
+        }
+      }
+
+      .bottom {
+
+      }
+
+      .text {
+        margin-top: 20px;
+        cursor: pointer;
+        color: white;
+      }
+    }
+  }
+}

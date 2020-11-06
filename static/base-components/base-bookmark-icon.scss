@@ -1,0 +1,23 @@
+.class-action {
+  position: absolute;
+  border-radius: 4px;
+  background-color: #c42f6f;
+  color: $white;
+  cursor: pointer;
+  
+
+  &.not-saved{
+    background-color: #584a74;
+
+    span {
+      color: #b3a1d7;
+    }
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

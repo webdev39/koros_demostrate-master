@@ -1,0 +1,39 @@
+.mobile-header {
+  padding: 30px 20px;
+  position: relative;
+  box-sizing: border-box;
+
+  .mobile-title {
+    @include font($avenirheavy, 18px, 800);
+    text-align: center;
+    margin: 0;
+  }
+
+  .button-right {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+  }
+
+  .button-left {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+  }
+
+  .menu-button {
+    cursor: pointer;
+    fill: $white;
+
+    &.reset {
+      font-family: Helvetica;
+      font-size: 13px;
+      color: #f9d7e6;
+    }
+  }
+
+  .section__title {
+    @include font($avenirheavy, 19px, 800);
+    margin: 0 0 0 35px;
+  }
+}

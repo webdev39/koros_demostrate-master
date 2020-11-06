@@ -1,0 +1,15 @@
+.profile {
+  padding: 40px;
+
+  .profile__header {
+    width: auto;
+    height: 28px;
+    color: $white;
+    @include font($avenirheavy, 20px, 500);
+  }
+
+  .block {
+    width: 420px;
+    height: 574px;
+  }
+}

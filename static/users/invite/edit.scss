@@ -1,0 +1,302 @@
+.invite_edit {
+  .block {
+    width: auto;
+    height: fit-content;
+    padding-bottom: 60px;
+    margin-top: 0;
+    background-color: $victoria;
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 360px;
+      margin-top: 40px;
+
+      .bottom__info {
+        width: 100%;
+        border-bottom: 1px solid $kimberly;
+        padding-bottom: 30px;
+        border-top: 1px solid $kimberly;
+
+        .block__info {
+          .row {
+            margin-top: 30px;
+          }
+        }
+      }
+
+      .save {
+        margin-left: inherit;
+        align-self: auto;
+        margin-top: 40px;
+      }
+    }
+
+    .avatar {
+      margin-top: 30px;
+    }
+
+    .topRight {
+      align-self: flex-end;
+      margin-top: 20px;
+      margin-right: -35px;
+      width: fit-content;
+      display: flex;
+
+      &.topRight_instructor {
+        margin-right: -65px;
+      }
+
+      .close {
+        float: right;
+        cursor: pointer;
+        font-size: 29px;
+        margin-top: -5px;
+      }
+    }
+
+    .title {
+      margin-top: 0;
+      color: $white;
+      @include font($avenirmedium, 20px, 500);
+    }
+
+    .block__geo {
+      color: $bilobaflower;
+      @include font($avenirheavy, 15px, 800);
+    }
+
+    &.block_double {
+
+      .bottom {
+        margin-top: 0;
+      }
+
+      .avatar-wrap {
+        display: flex;
+        margin-top: 60px;
+
+        .left, .right {
+          width: 365px;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .right {
+          border-left: 1px solid $kimberly;
+          padding-left: 65px;
+          margin-left: 35px;
+
+          .block__info {
+            .row {
+              margin-left: 80px;
+            }
+          }
+        }
+
+        .avatar {
+          margin-top: 0;
+        }
+      }
+
+      .block__info {
+        .fields {
+          .input__wrap {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            .label {
+              width: 115px;
+            }
+
+            .form-input {
+              width: 214px;
+            }
+          }
+
+          .row_edit {
+            display: flex;
+            justify-content: end;
+            align-items: baseline;
+
+            .param {
+              width: 115px;
+            }
+
+            .form-input {
+              width: 214px;
+            }
+          }
+        }
+
+        &.common {
+          align-self: start;
+          margin-left: 0;
+
+          .input__wrap {
+            width: 795px;
+
+            .label {
+              align-self: end;
+              margin-top: 15px;
+
+              flex: auto;
+              width: 118px;
+            }
+
+            .form-group {
+              width: 680px;
+              flex: auto;
+
+              .form-input {
+                width: inherit;
+                &.single {
+                  width: 214px;
+
+                }
+              }
+            }
+          }
+        }
+
+        .row {
+          width: auto;
+
+          &.row_bio {
+            width: 749px;
+
+            .param {
+              flex: auto;
+              width: 118px;
+            }
+
+            .value {
+              width: 647px;
+              flex: auto;
+            }
+          }
+
+          .value {
+            margin-left: 27px;
+          }
+        }
+      }
+
+      .remove {
+        margin-left: 20px;
+      }
+
+      .select-group {
+        .select {
+          .selected {
+            width: 214px;
+          }
+        }
+      }
+    }
+
+    .block__info {
+      width: 360px;
+      margin-top: 5px;
+
+      .fields {
+        display: flex;
+        flex-direction: column;
+
+        .input__wrap {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 15px;
+
+          &.input__wrap_first_name {
+            margin-top: 23px;
+          }
+
+          &.bio {
+            .label {
+              align-self: end;
+              margin-top: 15px;
+            }
+          }
+
+          .label {
+            color: $white;
+            width: 120px;
+            @include font($sanfranciscotext, 15px, 500);
+          }
+
+          .form-input {
+            background-color: $kimberly;
+
+            &.input__first_name {
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+
+      .form-input_select {
+        background-color: $kimberly;
+        padding: 0 27px;
+        border-radius: 28px;
+      }
+
+      .row {
+        .param {
+          color: $bilobaflower;
+          @include font($sanfranciscotext, 13px, 500);
+        }
+
+        .value {
+          flex: 2;
+          margin-left: 35px;
+        }
+      }
+    }
+
+    .save {
+      width: 161px;
+      height: 40px;
+      box-shadow: 0 16px 10px -11px rgba(63, 63, 63, 0.25);
+      border-radius: 28px;
+      background-color: $white;
+      color: $blackcurrant;
+      margin-top: 55px;
+    }
+
+    .remove {
+      margin-left: 35px;
+      background-color: $deluge;
+      color: $white;
+    }
+
+    .block__edit_link {
+      align-self: auto;
+      margin: 0;
+      margin-right: 25px;
+    }
+
+    .select-group {
+      .select {
+        .selected {
+          background-color: $kimberly;
+          border: 1px $kimberly solid;
+        }
+
+        .items {
+          background-color: $kimberly;
+          .item {
+            &:hover {
+              background-color: #433a56;
+            }
+          }
+        }
+      }
+    }
+  }
+}

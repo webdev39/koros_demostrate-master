@@ -1,0 +1,627 @@
+@import '../../node_modules/js-datepicker/src/datepicker';
+@import '../../node_modules/vue-multi-select/dist/lib/vue-multi-select.css';
+
+@mixin authForm($margin-top) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: $margin-top;
+}
+
+@mixin font($family, $size, $weight) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin mainStyles($height, $width, $color) {
+  width: $width;
+  height: $height;
+  color: $color;
+}
+
+@mixin sanFranciscoText($size, $weight) {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin newOutline() {
+  outline: none !important;
+  border: 2px solid $saltbox !important;
+}
+
+@mixin borderBox() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin setAnimation($animation, $duration, $timingFunc) {
+  -webkit-animation-name: $animation;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-timing-function: $timingFunc;
+}
+
+@mixin focusBorders {
+  border: transparent solid 2px;
+  &:focus {
+    outline: none;
+    border: $saltbox solid 2px;
+  }
+}
+
+@mixin webkitInput {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    -webkit-text-fill-color: $white;
+    -webkit-box-shadow: 0 0 0 1000px $mulledwine inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+@mixin shining() {
+  overflow: hidden;
+  &:after {
+    content: '';
+    top: 0;
+    transform: translateX(100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    animation: shine 2s infinite;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%);
+  }
+}
+
+@keyframes shine {
+	0% {
+    transform: translateX(-100%);
+  }
+	100% {
+    transform: translateX(100%);
+  }
+}
+
+/*
+fonts
+ */
+$avenirheavy: 'Avenir Heavy';
+$avenirmedium: 'Avenir Medium';
+$sanfranciscotext: 'San Francisco Pro Display Medium';
+$helvetica: 'Helvetica';
+@import './_font.scss';
+
+/*
+colors
+ */
+$white: #ffffff;
+$violentviolet: #312146;
+$blackcurrant: #160028;
+$blackcurrant2: #2d1d3f;
+$mamba: #756b82;
+$black: black;
+$mobster: #5b4972;
+$saltbox: #725671;
+$grey: grey;
+$light-grey: #e2e2e2;
+$mulledwine: #4c425a;
+$red: red;
+$honeyflower: #573873;
+$martinique: #382f49;
+$trendypink: #7f6480;
+$pinkswan: #b6b6b6;
+$tolopea: #1f1532;
+$twilight: #d9bacc;
+$fedora: #5e4d5f;
+$pink: #d0326d;
+$light-pink: #ff5e9a;
+$blue: #4300a7;
+$purple: #892488;
+$melrose: #c5bdd5;
+$whitesmoke: #f6f1f1;
+$maverick: #d3acbe;
+$wildwatermelon: #f64f63;
+$dodgerblue: #0091ff;
+$victoria: #584a74;
+$kimberly: #6b5a82;
+$coldpurple: #a19aaa;
+$bilobaflower: #b3a1d7;
+$radicalred: #f13e66;
+$deluge: #866cb5;
+$jagger: #443058;
+$silver: #C2C2C2;
+$perfume: #B996FF;
+$lola: #BFBEBF;
+$buttercup: #DA8E25;
+$lightningyellow: #F5A623;
+$jacarta: #43375A;
+$persianblue: #3023AE;
+$cerise: #D63068;
+
+@-webkit-keyframes clickAnimation {
+  0% {
+    color: $white;
+  }
+  50% {
+    color: $saltbox;
+  }
+  100% {
+    color: $white;
+  }
+}
+
+@-webkit-keyframes clickAnimationSaveProfile {
+  0% {
+    color: $blackcurrant;
+  }
+  50% {
+    color: $saltbox;
+  }
+  100% {
+    color: $blackcurrant;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  background-color: $blackcurrant;
+  color: $white;
+  height: 100%;
+}
+
+input,
+select {
+  border: 2px solid transparent;
+}
+
+input:focus {
+  @include newOutline();
+}
+
+select:focus {
+  @include newOutline();
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &.auth {
+    min-height: 100%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+.main__wrap {
+  min-width: min-content;
+}
+
+.main {
+  display: flex;
+  min-height: calc(100vh - 87px);
+
+  &.main_admin {
+    display: flex;
+    min-width: 1200px;
+  }
+}
+
+.content {
+  width: 100%;
+
+  &.user {
+    position: relative;
+    display: flex;
+    min-width: 100%;
+
+    .page-middle {
+      padding: 0 30px;
+      width: 1180px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .page-large {
+      width: 1380px;
+      margin: 0 auto;
+    }
+  }
+
+  // &.instructor {
+  //   position: relative;
+  //   padding-bottom: 100px;
+  //   width: 100%;
+  // }
+}
+
+.content-desktop {
+  margin: 50px 0 110px 0;
+
+  .section-title {
+    margin: 0;
+    color: $twilight;
+    @include font($avenirheavy, 20px, 800);
+  }
+
+  .content-wrapper {
+    display: flex;
+    margin-top: 10px;
+  }
+}
+
+.admin-section {
+
+  margin: 50px;
+
+  .title {
+    @include font($avenirmedium, 20px, 500);
+    margin: 0;
+  }
+
+  .admin-section-title {
+    @include font($avenirmedium, 22px, 500);
+    margin: 0;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.koros__title {
+  font-size: 40px;
+}
+
+.form-group {
+  width: min-content;
+  position: relative;
+
+  .select-group {
+    .select {
+      height: auto;
+      line-height: inherit;
+
+      .selected {
+        border-radius: 50px;
+        background-color: #382f49;
+        width: 256px;
+        height: 40px;
+        padding: 0 30px;
+        box-sizing: border-box;
+      }
+
+      .items {
+        background-color: $martinique;
+
+        .item {
+          padding: 0 30px;
+
+          &:hover {
+            background-color: #433a56;
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-group_radio {
+  display: flex;
+  margin-top: 15px;
+}
+
+.form-input {
+  &:focus::placeholder {
+    color: transparent !important;
+  }
+  width: 256px;
+  height: 40px;
+  border: 0;
+  background-color: $mulledwine;
+  color: $white;
+  border-radius: 50px;
+  padding: 0 25px;
+  @include font($sanfranciscotext, 15px, 400);
+  @include borderBox;
+  @include focusBorders;
+}
+
+textarea {
+  &.form-input {
+    resize: none;
+    height: 90px;
+    border-radius: 17px;
+    padding: 10px 30px;
+    overflow: hidden;
+  }
+}
+
+.form-input {
+  &.form-input_select {
+    padding: 0 20px;
+    border-radius: 28px;
+    background-color: $martinique;
+    color: $white;
+  }
+}
+
+.inputError {
+  border: 2px solid $red !important;
+}
+
+.inputErrorMessage {
+  color: red !important;
+  padding: 5px 0;
+  position: relative;
+  text-align: justify;
+  font-size: 15px;
+  max-width: 400px;
+}
+
+.v--modal-overlay {
+  z-index: 1 !important;
+}
+
+.alert {
+  width: 525px;
+  height: auto;
+  background-color: rgba(255, 0, 0, 0.9);
+  position: fixed;
+  margin: 15px auto;
+  left: 0;
+  text-align: left;
+  right: 0;
+  top: 82px;
+  @include sanFranciscoText(18px, 400);
+  padding: 20px 35px;
+  z-index: 2;
+  border-radius: 50px;
+
+  .close {
+    float: right;
+    cursor: pointer;
+  }
+}
+
+.clicked {
+  @include setAnimation(clickAnimation, 0.25s, ease);
+}
+
+.clickedSave {
+  @include setAnimation(clickAnimationSaveProfile, 0.25s, ease);
+}
+
+.alert.alert-success {
+  background-color: rgba(8, 158, 110, 0.9);
+}
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.btn {
+  color: $white;
+  border-radius: 50px;
+  border: 0;
+  cursor: pointer;
+  @include focusBorders;
+  @include font($avenirheavy, 18px, 800);
+  padding: 12px 0;
+
+  &.btn-primary {
+    background: linear-gradient(
+                    90deg,
+                    rgba(67, 0, 167, 1) 0%,
+                    rgba(137, 36, 136, 1) 51%,
+                    rgba(208, 50, 109, 1) 100%
+    );
+    background-clip: padding-box;
+  }
+
+  &.btn-secondary {
+    background: #403457;
+  }
+  &.btn-red {
+    font-size: 15px;
+    background-color: #f64f63;
+    padding: 8px 24px;
+  }
+}
+
+.mobile-screen {
+  display: none;
+}
+
+.page-not-found, .forbidden, .unauthorized {
+  height: 100vh;
+  text-align: center;
+
+  h1 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.route-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #160028;
+  // background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+
+  div {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $twilight;
+    font-size: 50px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .content.user {
+    
+    .page-large {
+      padding: 0 30px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .content.user {
+    
+    .page-middle {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    &.user {
+      padding-bottom: 100px;
+
+      .page-middle {
+        padding: 0;
+      }
+
+      .page-large {
+        padding: 0;
+      }
+    }
+  }
+
+  .page-not-found {
+    img {
+      width: 199px;
+      height: auto;
+    }
+  }
+
+  .alert {
+    width: 100%;
+    box-sizing: border-box;
+    @include sanFranciscoText(16px, 400);
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  .full-screen {
+    display: none;
+  }
+}
+
+@each $section in dashboard, users {
+  .#{$section} {
+    padding: 40px;
+
+    .#{$section}__header {
+      color: $white;
+      margin: 0;
+    }
+  }
+}
+
+// animations
+
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .4; } 
+	100% { opacity: 1; }
+}
+
+.quick-fade-enter-active,
+.quick-fade-leave-active {
+  transition: opacity 0.1s;
+}
+
+.quick-fade-enter,
+.quick-fade-leave-to {
+  opacity: 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+
+  .deactivate {
+    cursor: pointer;
+  }
+
+  .edit {
+    cursor: pointer;
+  }
+
+  .delete {
+    cursor: pointer;
+  }
+}
+
+@import './navbar.scss';
+@import './sidebar.scss';
+@import './mobilemenu.scss';
+@import './mobileheader.scss';
+@import './profile.scss';
+@import './profile-mobile.scss';
+@import 'instructor/instructor.scss';
+@import './auth.scss';
+@import './datepicker.scss';
+@import 'user/user';
+@import './live-classes';
+@import 'users/users';
+@import 'user/user';
+@import './base-components';
+@import './classes/classes.scss';
+@import './classes/user-pages';

@@ -1,0 +1,35 @@
+.class-management {
+  display: flex;
+  color: #7f6480;
+  justify-content: space-around;
+
+  .management-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.1s color ease-in;
+    cursor: pointer;
+
+    .action-icon {
+      font-size: 20px;
+      fill: #7f6480;
+      transition: 0.1s fill ease-in;
+    }
+
+    .action-name {
+      font-family: Helvetica;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    &:not(.disabled):hover {
+      color: $white;
+      transition: 0.1s color ease-in;
+
+      .action-icon {
+        fill: $white;
+        transition: 0.1s fill ease-in;
+      }
+    }
+  }
+}

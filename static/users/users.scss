@@ -1,0 +1,307 @@
+.users {
+  .users__first {
+    .header {
+      width: 155px;
+      height: 28px;
+      color: $twilight;
+      @include font($avenirmedium, 20px, 500)
+    }
+
+    .body {
+
+    }
+  }
+
+  .users__second {
+    width: 100%;
+
+    .header {
+      width: auto;
+      height: 28px;
+      color: $twilight;
+      @include font($avenirmedium, 20px, 500);
+    }
+
+    .body {
+
+      .users__table {
+
+        .add {
+          border: 0;
+          border-radius: 50px;
+          color: $white;
+          background-color: $radicalred;
+          width: 101px;
+          height: 40px;
+          @include font($avenirheavy, 15px, 800);
+          cursor: pointer;
+        }
+
+        .table-responsive {
+          width: auto;
+          height: auto;
+          border-radius: 7px;
+          background-color: $tolopea;
+          padding: 20px 45px;
+          margin-top: 15px;
+
+          table {
+            border-collapse: collapse;
+
+            thead {
+              tr {
+                font-size: 15px;
+                height: 40px;
+              }
+            }
+
+            tr {
+              height: 70px;
+              border-bottom: 1px solid $fedora;
+
+              th {
+                color: $trendypink;
+                @include font($sanfranciscotext, 15px, 500);
+                text-align: start;
+              }
+
+              td {
+                .users__name {
+                  display: flex;
+                  align-items: center;
+                  @include font($avenirmedium, 15px, 500);
+
+                  &.avatar {
+                    cursor: pointer;
+                  }
+                }
+
+                .users__wrap {
+                  background-color: $black;
+                  height: 42px;
+                  width: 42px;
+                  border-radius: 25px;
+                  position: relative;
+                  overflow: hidden;
+                  margin-right: 10px;
+                }
+
+                .users__img {
+                  position: absolute;
+                  height: auto;
+                  width: auto;
+                  max-width: 60px;
+                  max-height: 60px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.items {
+  overflow: hidden;
+}
+
+.VueTables__search-field {
+  width: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include font($sanfranciscotext, 15px, 400);
+
+  label {
+    @include font($avenirmedium, 20px, 500);
+  }
+}
+
+.VueTables__search__input {
+  width: 310px;
+  height: 40px;
+  border-radius: 28px;
+  padding-left: 15px;
+  @include borderBox;
+  background-color: $blackcurrant2;
+  color: $mamba;
+  @include font($sanfranciscotext, 15px, 400);
+
+  &::-webkit-input-placeholder {
+    background: no-repeat url(/img/icons/search.svg);
+    background-position: 0 25%;
+    text-indent: 25px;
+    color: $coldpurple;
+  }
+
+  &:-ms-input-placeholder {
+    background: no-repeat url(/img/icons/search.svg);
+    background-position: 0 25%;
+    text-indent: 25px;
+    color: $coldpurple;
+  }
+
+  &::-ms-input-placeholder {
+    background: no-repeat url(/img/icons/search.svg);
+    background-position: 0 25%;
+    text-indent: 25px;
+    color: $coldpurple;
+  }
+
+  &::-moz-placeholder {
+    background: no-repeat url(/img/icons/search.svg);
+    background-position: 0 25%;
+    text-indent: 25px;
+    color: $coldpurple;
+  }
+
+  &::placeholder {
+    background: no-repeat url(/img/icons/search.svg);
+    background-position: 0 25%;
+    text-indent: 25px;
+    color: $coldpurple;
+  }
+}
+
+.VueTables--client {
+  .row {
+    .col-md-12 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .VueTables__limit {
+      width: 375px;
+      position: relative;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+
+      .selected {
+        width: 142px;
+        height: 40px;
+        box-shadow: 0 16px 10px -11px rgba(63, 63, 63, 0.25);
+        border-radius: 28px;
+        padding: 0 20px;
+        display: flex;
+        @include font($sanfranciscotext, 15px, 500);
+      }
+
+      .items {
+        border-radius: 6px;
+        background-color: #584a74;
+        overflow: hidden;
+        width: 142px;
+        font-size: 13px;
+
+        .item {
+          padding: 0 15px;
+        }
+      }
+
+      .label {
+        width: 87px;
+        height: 19px;
+        color: $trendypink;
+        @include font($sanfranciscotext, 15px, 500);
+      }
+
+      .form-input.filter {
+        width: 142px;
+        color: $white;
+        @include font($sanfranciscotext, 15px, 400);
+      }
+    }
+  }
+
+
+  .VueTables__table {
+    width: 100%;
+    max-width: 100%;
+
+    tfoot {
+      tr {
+        border-bottom: none !important;
+      }
+    }
+
+    #VueTables_th--name {
+      width: 250px;
+    }
+
+    #VueTables_th--id {
+      width: 180px;
+    }
+
+    #VueTables_th--membership {
+      width: 200px;
+    }
+
+    #VueTables_th--paymentHistory {
+      width: 230px;
+    }
+
+    #VueTables_th--issueRefund {
+      width: 220px;
+    }
+
+    #VueTables_th--joinStatus {
+      width: 270px;
+    }
+
+    #VueTables_th--typeOfUser {
+      width: 200px;
+    }
+
+    #VueTables_th--lastLogin {
+      width: 200px;
+    }
+
+    #VueTables_th--buttons {
+      width: 150px;
+    }
+
+    .VuePagination__pagination {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      float: right;
+      justify-content: space-between;
+      width: 150px;
+
+      &::before {
+        color: $trendypink;
+        content: 'Page';
+        @include font($avenirheavy, 15px, 800);
+      }
+
+      .VuePagination__pagination-item {
+
+        &.VuePagination__pagination-item-prev-chunk.disabled, &.VuePagination__pagination-item-next-chunk.disabled {
+          display: none;
+        }
+
+        &.active {
+          a {
+            color: white;
+            text-decoration: underline;
+          }
+        }
+
+        a {
+          color: $trendypink;
+          @include font($avenirheavy, 15px, 800);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@import './invite/edit.scss';
+@import './invite/list.scss';
+@import './invite/add.scss';
+@import './invite/view.scss';
+@import './invite/pagination.scss';

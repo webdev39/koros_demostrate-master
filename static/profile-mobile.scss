@@ -1,0 +1,20 @@
+.mobile-body {
+
+  .half-profile {
+    background-color: $tolopea;
+    border-radius: 15px;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+
+    .profile-info {
+      margin-bottom: 0;
+    }
+
+    .info-item {
+
+      .item-title {
+        color: $twilight;
+      }
+    }
+  }
+}

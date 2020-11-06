@@ -1,0 +1,75 @@
+.page-large {
+  .section-title {
+    font-size: 22px;
+  }
+
+  .classes-categories,
+  .upcoming-live-classes {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .class-summary {
+    margin-right: 25px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.upcoming,
+.all-categories,
+.bookmarks {
+
+  margin-bottom: 45px;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .more-link {
+      color: $wildwatermelon;
+      font-family: $helvetica;
+      font-size: 13px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  
+  .all-categories,
+  .upcoming,
+  .bookmarks {
+    padding-left: 20px;
+
+    header {
+      margin-right: 20px;
+
+      .more-link {
+        color: $maverick;
+        display: flex;
+        align-items: center;     
+
+        span {
+          margin-left: 10px;
+          font-size: 16px;
+        }
+        
+      }
+    }
+  }
+  .page-large {
+    .section-title {
+      font-size: 20px;
+    }
+  }
+
+  .classes-categories {
+    height: 283px;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,256 @@
+.live-classes-section {
+  width: 100%;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .more-link {
+      color: #f64f63;
+      font-family: Helvetica;
+      font-size: 13px;
+    }
+  }
+
+  .live-class {
+    width: 100%;
+
+    .section-subtitle {
+      @include font($avenirheavy, 20px, 800);
+    }
+
+    .class-nav {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #43385a;
+      align-items: flex-end;
+
+      .btn {
+        padding: 8px 24px;
+        width: 100px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .weeks {
+    display: flex;
+    padding: 10px 0;
+    box-sizing: border-box;
+    width: calc(100% - 120px);
+    overflow: hidden;
+  
+    .week {
+      @include font($avenirheavy, 15px, 800);
+      color: $trendypink;
+      margin-right: 50px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.1s color ease-out;
+  
+      &:last-child {
+        margin-right: 0;
+      }
+  
+      &:hover {
+        color: $white;
+      }
+
+      &.current {
+        color: $white;
+      }
+    }
+  }
+}
+
+.admin-section {
+
+  .live-classes-section {
+    max-width: 1180px;
+  }
+}
+
+.week-classes {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .class-view {
+    margin-bottom: 45px;
+    margin-right: calc((100% - 327px*3)/2);
+
+    &:nth-child(3n){
+      margin-right: 0;
+    }
+
+    &.deactivated {
+      opacity: 0.5;
+    }
+  }
+}
+
+.related-video-section {
+  border-top: 1px solid #43385a;
+  margin-top: 30px;
+}
+.related-classes {
+  display: flex;
+  overflow: hidden;
+}
+
+.recorded-preview {
+  color: $white;
+  margin-right: 25px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .preview-thumbnail {
+    width: 180px;
+    height: 145px;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+
+  .preview-description {
+
+    margin-top: 15px;
+
+    .preview-title {
+      @include font($avenirheavy, 18px, 800);
+      margin: 0;
+    }
+
+    .class-level {
+      color: #f9d7e6;
+      font-family: Helvetica;
+      font-size: 13px;
+    }
+
+    .class-instructor {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+
+      .instructor-name {
+        font-family: Helvetica;
+        font-size: 13px;
+        margin-left: 8px;
+      }
+    }
+
+  }
+}
+
+.mobile-body {
+
+  .weeks {
+    background-color: #301e3d;
+    padding-left: 20px;
+
+    .week {
+      @include font($avenirheavy, 15px, 800);
+      color: #706092;
+      padding: 20px 0;
+      cursor: pointer;
+      transition: 0.1s color ease-out;
+
+      &:hover {
+        color: #f64f63;
+      }
+
+      &.current {
+        color: #f64f63;
+      }
+    }
+  }
+
+  .class-view:last-child {
+    margin-bottom: 0;
+  }
+
+  .related-video-section {
+    color: $white;
+    padding: 20px;
+    border: none;
+    margin-top: 0;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .more-link {
+        color: #d3acbe;
+        font-family: Helvetica;
+        font-size: 13px;
+      }
+    }
+
+    .section-subtitle {
+      @include font($avenirheavy, 17px, 800);
+      margin: 0;
+    }
+
+    .related-classes {
+      display: block;
+      margin-top: 25px;
+
+      .recorded-slide {
+        padding-right: 20px;
+      }
+
+      .recorded-preview {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.mobile-week-classes {
+  padding: 0 20px;
+}
+
+@media only screen and (max-width: 1150px) {
+
+  .week-classes {
+  
+    .class-view {
+      margin-right: 90px;
+  
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(3n) {
+        margin-right: 90px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 930px) {
+
+  .content-desktop {
+    margin: 50px auto
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .week-classes {
+  
+    .class-view {
+      margin-right: calc((100% - 327px*2));
+  
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+      
+      &:nth-child(3n) {
+        margin-right: calc((100% - 327px*2));
+      }
+    }
+  }
+}

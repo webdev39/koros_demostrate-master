@@ -1,0 +1,145 @@
+.record_view {
+  padding: 40px;
+
+  .record_view__header {
+    width: auto;
+    height: 28px;
+    color: $white;
+    @include font($avenirmedium, 20px, 500);
+  }
+
+  .block {
+    height: fit-content;
+    padding-bottom: 60px;
+
+    .block__edit_link {
+      align-self: flex-end;
+      margin-top: 30px;
+      width: 100px;
+      display: flex;
+      justify-content: space-around;
+      margin-right: 15px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: row;
+      width: 95%;
+
+      .info__photo {
+        width: 358px;
+        height: 262px;
+
+        .block__photo {
+          border-radius: 10px;
+
+          .photo {
+            border-radius: 10px;
+          }
+        }
+      }
+
+      .info__data {
+        display: flex;
+        flex-direction: column;
+        margin-left: 30px;
+        height: 262px;
+
+        .instructor {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 225px;
+          justify-content: space-between;
+
+          .photo {
+            width: 42px;
+            height: 42px;
+          }
+
+          .instructor__right {
+            width: 173px;
+
+            .name {
+              @include font($avenirheavy, 15px, 500);
+              font-size: 15px;
+              text-align: center;
+              width: fit-content;
+            }
+
+            .reviews {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              height: 30px;
+
+              .reviews_text {
+                @include font($helvetica, 13px, 500);
+              }
+            }
+          }
+        }
+
+        .title {
+          @include font($avenirheavy, 30px, 500);
+          margin-top: 20px;
+        }
+
+        .subtitle {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          @include font($avenirmedium, 15px, 500);
+
+          .duration {
+            display: flex;
+            align-items: center;
+            @include font($avenirheavy, 15px, 500);
+          }
+
+          .level {
+            @include font($avenirmedium, 15px, 500);
+            width: 110px;
+            display: flex;
+            align-items: center;
+
+            label {
+
+            }
+
+            .text {
+              color: $buttercup;
+              @include font($avenirmedium, 15px, 800);
+            }
+          }
+        }
+
+        .description {
+          width: fit-content;
+          @include font($helvetica, 13px, 500);
+          line-height: 19px;
+          letter-spacing: 0.0917647px;
+          color: $silver;
+          margin-top: 25px;
+        }
+      }
+    }
+
+    .moves__title {
+      align-self: center;
+      width: 95%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 55px;
+
+      .moves__title__text {
+        @include font($avenirmedium, 20px, 600);
+      }
+    }
+
+    .moves {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.instructor-rating {
+  display: flex;
+  align-items: center;
+
+  .avatar,
+  .avatar-double {
+    margin-right: 15px;
+  }
+
+  .user-name {
+    @include font($avenirheavy, 15px, 800);
+  }
+  
+  .rating-info {
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .rating {
+    
+      color: #f5a623;
+      margin-top: 5px;
+    
+      .reviews {
+        color: $white;
+        font-family: Helvetica, sans-serif;
+        margin-left: 5px;
+        line-height: 13px;
+        vertical-align: bottom;
+      }
+
+      .star {
+        margin-left: 2px;
+        font-size: 11px;
+      }
+    }
+
+    .class-progress {
+      font-family: $helvetica, sans-serif;
+      font-size: 13px;
+      line-height: 20px;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+}

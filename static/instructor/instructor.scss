@@ -1,0 +1,14 @@
+.section-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: $twilight;
+  @include font($avenirheavy, 20px, 800);
+}
+
+.profile-title {
+  @include font($avenirmedium, 20px, 500);
+  text-align: center;
+}
+
+@import './profile/view.scss';
+@import './profile/edit.scss';

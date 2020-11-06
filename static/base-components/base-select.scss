@@ -1,0 +1,183 @@
+.select-group {
+  .select {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    height: 47px;
+    line-height: 47px;
+    @include font($avenirmedium, 15px, 500);
+
+    .selected {
+      background-color: $blackcurrant;
+      border-radius: 4px;
+      border: 1px #43375a solid;
+      color: #ffffff;
+      padding: 0 20px;
+      height: 100%;
+      cursor: pointer;
+      user-select: none;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &.open {
+        border: 1px solid $saltbox;
+        border-radius: 4px 4px 0px 0px;
+      }
+
+      &:after {
+        position: absolute;
+        content: "";
+        top: 22px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border: 4px solid transparent;
+        border-color: #fff transparent transparent transparent;
+      }
+    }
+
+    .items {
+      color: #ffffff;
+      border-radius: 0px 0px 4px 4px;
+      overflow-y: hidden;
+      border-right: 1px solid $saltbox;
+      border-left: 1px solid $saltbox;
+      border-bottom: 1px solid $saltbox;
+      position: absolute;
+      background-color: $blackcurrant;
+      left: 0;
+      right: 0;
+      max-height: calc(46.4px * 5);
+      z-index: 100;
+
+      .item {
+        padding: 0 20px;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          background-color: #2b1e45;
+        }
+      }
+    }
+
+    .hide {
+      display: none;
+    }
+  }
+}
+
+.mobile-input {
+  .select {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    @include font($avenirmedium, 13px, 500);
+
+    .selected {
+      background-color: $blackcurrant;
+      color: #ffffff;
+      min-height: 17px;
+      min-width: 60px;
+      cursor: pointer;
+      user-select: none;
+      text-align: right;
+
+      &.open {
+        background-color: #2b1e45;
+      }
+    }
+
+    .items {
+      min-width: 200px;
+      color: #ffffff;
+      border-radius: 0px 0px 4px 4px;
+      overflow-y: scroll;
+      border: 1px solid $saltbox;
+      position: absolute;
+      background-color: $blackcurrant;
+      right: 0;
+      max-height: calc(37.6px * 5);
+      z-index: 100;
+
+      .item {
+        padding: 10px 20px;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          background-color: #2b1e45;
+        }
+      }
+    }
+
+    .hide {
+      display: none;
+    }
+  }
+}
+
+.inline-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+  label {
+    @include font($sanfranciscotext, 15px, 400);
+    width: 100px;
+  }
+
+  .select {
+    position: relative;
+    width: calc(100% - 100px);
+    border: transparent solid 2px;
+    outline: none;
+    @include font($avenirmedium, 15px, 500);
+
+    .selected {
+      border-radius: 28px;
+      background-color: rgba(255, 255, 255, 0.1);
+      min-height: 45px;
+      padding: 10px 28px;
+      cursor: pointer;
+      user-select: none;
+      box-sizing: border-box;
+      white-space: nowrap;
+
+      &.open {
+        border: $saltbox solid 2px;
+      }
+    }
+
+    .items {
+      width: calc(100% - 40px);
+      left: 20px;
+      border-radius: 0px 0px 4px 4px;
+      border: $saltbox solid 2px;
+      position: absolute;
+      background-color: $mulledwine;
+      max-height: calc(40.8px * 5);
+      z-index: 100;
+      overflow-y: auto;
+
+      .item {
+        padding: 10px 20px;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          background-color: $trendypink;
+        }
+      }
+    }
+
+    .hide {
+      display: none;
+    }
+  }
+}

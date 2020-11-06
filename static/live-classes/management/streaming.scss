@@ -1,0 +1,121 @@
+.streaming-page {
+  display: flex;
+  height: 100%;
+
+  .streaming-main {
+    position: relative;
+    width: 65%;
+    height: 100%;
+    background-color: $blackcurrant2;
+    padding: 30px;
+    box-sizing: border-box;
+  
+    li {
+      span {
+        font-weight: 700;
+      }
+    }
+  
+    button {
+      padding: 12px;
+      margin-top: 30px;
+      width: 100px;
+    }
+
+      .video-js {
+        .vjs-big-play-button {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          margin-top: 0;
+        }
+    }
+  }
+
+  .messenger-block {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .new-message {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #271a3f;
+    padding: 22px 30px;
+
+    .message-field {
+      width: 236px;
+      background-color: #3e3255;
+      border-radius: 21px;
+      @include focusBorders;
+      padding: 12px 26px;
+      font-family: Helvetica;
+      font-size: 13px;
+      color: $white;
+      margin: 0 20px 0 15px;
+    }
+
+    .send {
+      fill: $trendypink;
+      cursor: pointer;
+    }
+  }
+}
+
+.stream-status {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background-color: #54980c;
+  border-radius: 10px;
+  padding: 3px 10px;
+  @include font($avenirheavy, 15px, 900);
+
+  &.error {
+    background-color: $red;
+  }
+}
+
+.streaming-chat {
+  padding: 30px;
+
+  .comments-amount {
+    @include font($avenirheavy, 15px, 900);
+    color: $trendypink;
+  }
+
+  .messages {
+    margin: 20px 0;
+  }
+
+  .message {
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+  .message-content {
+
+    margin-left: 15px;
+
+    .time {
+      @include font($avenirmedium, 12px, 500);
+      color: $trendypink;
+      margin-top: 4px;
+    }
+  }
+
+  .message-text {
+    width: 276px;
+    padding: 10px 20px;
+    background-color: #3e3255;
+    border-radius: 9px;
+    box-sizing: border-box;
+    font-family: $helvetica;
+    font-size: 13px;
+    line-height: 19px;
+  }
+}

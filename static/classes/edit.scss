@@ -1,0 +1,186 @@
+.record_edit {
+  padding: 40px;
+
+  .record_edit__header {
+    width: auto;
+    height: 28px;
+    color: $white;
+    @include font($avenirmedium, 20px, 500);
+  }
+
+  .block {
+    height: fit-content;
+    padding-bottom: 60px;
+
+    .buttons {
+      display: flex;
+      justify-content: end;
+      width: 95%;
+
+      .save {
+        margin-top: 40px;
+        align-self: start;
+        margin-left: 0;
+        margin-right: 20px;
+        background: linear-gradient(162.99deg, $persianblue 0%, $cerise 101.5%);
+        width: 175px;
+        height: 53px;
+        box-shadow: 0 16px 10px -11px rgba(63, 63, 63, 0.25);
+        border-radius: 50px;
+        color: $white;
+        @include font($avenirheavy, 15px, 800);
+        border: 0 !important;
+        cursor: pointer;
+      }
+
+      .preview {
+        margin-top: 40px;
+        align-self: start;
+        margin-left: 0;
+        margin-right: 20px;
+        background: $victoria;
+        width: 175px;
+        height: 53px;
+        box-shadow: 0 16px 10px -11px rgba(63, 63, 63, 0.25);
+        border-radius: 50px;
+        color: $white;
+        @include font($avenirheavy, 15px, 800);
+        border: 0 !important;
+        cursor: pointer;
+      }
+
+      .publish {
+        margin-top: 40px;
+        align-self: start;
+        margin-left: 0;
+        margin-right: 20px;
+        background: linear-gradient(162.99deg, #E25B00 0%, #FFA200 101.5%);
+        width: 175px;
+        height: 53px;
+        box-shadow: 0 16px 10px -11px rgba(63, 63, 63, 0.25);
+        border-radius: 50px;
+        color: $white;
+        @include font($avenirheavy, 15px, 800);
+        border: 0 !important;
+        cursor: pointer;
+      }
+    }
+
+    .block__edit_link {
+      align-self: flex-end;
+      margin-top: 30px;
+      width: 40px;
+      display: flex;
+      margin-right: 15px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: row;
+      width: 95%;
+
+      .info__video {
+        width: 358px;
+        height: 262px;
+
+        .block__video {
+          border-radius: 15px;
+
+          .video {
+            border-radius: 15px !important;
+            background-color: $martinique;
+
+            .video_icon {
+              width: 25%;
+              height: 25%;
+              position: absolute;
+              left: 39%;
+              top: 37%;
+              cursor: pointer;
+            }
+          }
+
+          .fa-camera {
+            color: $white;
+            left: 92%;
+            top: 87%;
+            width: 15%;
+            height: 10%;
+          }
+        }
+      }
+
+      .info__data {
+        display: flex;
+        flex-direction: column;
+        margin-left: 75px;
+
+        .form-group {
+          position: relative;
+          display: flex;
+          width: inherit;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 15px;
+
+          label {
+            width: 100px;
+          }
+
+          .input-wrap {
+            width: 100%;
+            max-width: 492px !important;
+          }
+
+          .form-input {
+            max-width: 492px !important;
+            width: 100%;
+            margin-top: 0;
+            background-color: $mulledwine !important;
+          }
+
+          .select-group {
+            width: 100%;
+            max-width: 492px !important;
+
+            .selected {
+              background-color: $mulledwine !important;
+              margin-top: 0;
+              max-width: 492px !important;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .autocomplete {
+    width: fit-content;
+  }
+
+  .autocomplete__icon {
+    display: none !important;
+  }
+
+  .autocomplete__box {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+
+  .autocomplete__inputs {
+    padding: 0 !important;
+  }
+
+  .fa-camera {
+    z-index: 0;
+  }
+}

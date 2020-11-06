@@ -1,0 +1,157 @@
+.add-record-modal {
+  background-color: $victoria;
+  border-radius: 7px;
+  height: auto !important;
+  width: fit-content !important;
+  padding: 0 60px;
+  left: auto !important;
+
+  margin: auto;
+
+  .record-add {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+      font-size: 30px;
+    }
+
+    .title {
+      color: $white;
+      margin-top: 50px;
+      @include font($avenirmedium, 20px, 500);
+    }
+
+    .record-add__info {
+      display: flex;
+      flex-direction: column;
+
+      .photo__wrap {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        margin-top: 45px;
+
+        .avatar {
+          &.avatar_dublicate {
+            margin-left: 210px;
+          }
+        }
+
+        .add_recorded_class_thumbnail {
+          .fa-camera {
+            color: white;
+          }
+        }
+
+        .label {
+          color: $white;
+          width: 120px;
+          align-self: center;
+          @include font($sanfranciscotext, 15px, 500);
+        }
+      }
+
+      .fields {
+        display: flex;
+        flex-direction: column;
+
+        .input__wrap {
+          display: flex;
+          justify-content: end;
+          align-items: center;
+          margin-top: 15px;
+
+          &.description {
+            .label {
+              align-self: end;
+              margin-top: 15px;
+            }
+          }
+
+          .label {
+            color: $white;
+            width: 120px;
+            @include font($sanfranciscotext, 15px, 500);
+          }
+
+          .form-input {
+            background-color: $kimberly;
+
+            &.form-input_top {
+              margin-top: 45px;
+            }
+          }
+        }
+      }
+    }
+
+    .add {
+      width: 143px;
+      height: 40px;
+      border: 0;
+      border-radius: 28px;
+      background-color: $white;
+      color: $blackcurrant;
+      @include font($avenirheavy, 15px, 800);
+      margin-top: 35px;
+      margin-bottom: 50px;
+      cursor: pointer;
+    }
+  }
+
+  .select-group {
+    .select {
+      .selected {
+        background-color: $kimberly;
+        border: 1px $kimberly solid;
+        display: flex;
+      }
+
+      .items {
+        background-color: $kimberly;
+
+        .item {
+          &:hover {
+            background-color: #433a56;
+          }
+        }
+      }
+    }
+  }
+
+  .autocomplete__icon {
+    display: none !important;
+  }
+
+  .autocomplete__box {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+
+  .autocomplete__inputs {
+    padding: 0 !important;
+  }
+
+  .form-input {
+    width: 256px !important;
+  }
+}
+
+
+

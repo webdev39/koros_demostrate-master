@@ -1,0 +1,263 @@
+.admin-section {
+
+  &.create-page {
+    width: 908px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .block {
+    &.create-class {
+      padding: 31px 42px 42px;
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  .class-photo {
+    width: 176px;
+    height: 145px;
+    position: relative;
+
+    .photo {
+      background-color: #6b5a82;
+      width: 100%;
+      height: 100%;
+      border-radius: 7px;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .action {
+      position: absolute;
+      font-size: 25px;
+      bottom: 10px;
+      right: 10px;
+      height: 25px;
+
+      label {
+        cursor: pointer;
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+    }
+  }
+
+  .management-form {
+    width: 551px;
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+
+      &.textarea {
+        label {
+          align-self: flex-start;
+        }
+      }
+    }
+
+    .inline-select {
+      margin-bottom: 10px;
+      justify-content: flex-end;
+
+      .select {
+        width: 447px;
+      }
+
+      .selected {
+        position: relative;
+        height: 100%;
+        min-height: 40px;
+        border: transparent solid 2px;
+        line-height: 1;
+
+        &.open {
+          border: #725671 solid 2px;
+        }
+
+        &:after {
+          content: '▼';
+          font-size: 10px;
+          position: absolute;
+          right: 17px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    label {
+      width: 100px;
+      box-sizing: border-box;
+      padding-right: 10px;
+      font-size: 13px;
+    }
+
+    input,
+    textarea {
+      width: 447px;
+      background-color: rgba(255, 255, 255, 0.1);
+      @include font($avenirmedium, 15px, 500);
+      padding: 10px 28px;
+      color: $white;
+      @include webkitInput;
+      box-sizing: border-box;
+    }
+
+    input {
+      border-radius: 28px;
+      height: inherit;
+      height: 40px;
+    }
+
+    textarea {
+      resize: none;
+      @include focusBorders;
+      border-radius: 7px;
+      height: 133px;
+    }
+
+    .access {
+      @include font($avenirmedium, 15px, 500);
+    }
+
+    .input-combined {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .inputs {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 447px;
+
+      input,
+      .select {
+        font-size: 13px;
+        width: 102px;
+      }
+
+      .date-wrapper {
+        width: 102px;
+        @include font($avenirmedium, 15px, 500);
+      }
+
+      input {
+        padding: 10px 15px;
+      }
+
+      .input-group {
+        align-items: center;
+      }
+
+      .inline-select {
+        margin-bottom: 0;
+        width: 102px;
+
+        .select {
+          border: none;
+          width: 100%;
+        }
+
+        .selected {
+          padding: 10px 15px;
+
+          &:after {
+            right: 12px;
+          }
+        }
+
+        .items {
+          width: calc(100% - 10px);
+          left: 5px;
+          font-size: 12px;
+
+          .item {
+            padding: 10px;
+          }
+        }
+      }
+
+      & + .inputErrorMessage {
+        margin-left: 100px;
+      }
+
+      span {
+        color: #9786b7;
+
+        &.to {
+          font-size: 15px;
+        }
+
+        &.time {
+          font-size: 13px;
+          width: 78px;
+        }
+      }
+    }
+  }
+
+  .radio-group {
+    display: flex;
+    margin: 0 0 20px 100px;
+
+    .radio:first-child {
+      margin-right: 122px;
+    }
+
+    label {
+      @include font($avenirheavy, 18px, 800);
+      color: #aa8596;
+      display: flex;
+      padding-right: 0;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 21px;
+        height: 21px;
+        border: 1px solid #aa8596;
+        border-radius: 100%;
+        margin-right: 15px;
+      }
+    }
+
+    input[type="radio"] {
+      display: none;
+
+      &:checked + label {
+
+        color: #f64f63;
+
+        &:before {
+          border-color: #f64f63;
+          content: '●';
+        }
+      }
+    }
+  }
+
+  .button-group {
+    margin: 25px 0 0 100px;
+
+    .btn {
+      width: 175px;
+    }
+  }
+}

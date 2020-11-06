@@ -1,0 +1,180 @@
+.recorded_classes_list {
+  padding: 40px;
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .header {
+      width: auto;
+      height: 28px;
+      color: $white;
+      @include font($avenirmedium, 22px, 500);
+    }
+
+    .upload {
+      border: 0;
+      border-radius: 50px;
+      color: $white;
+      background-color: $radicalred;
+      width: 101px;
+      height: 40px;
+      @include font($avenirheavy, 15px, 800);
+      cursor: pointer;
+    }
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+
+    .block {
+      height: 187px;
+      margin-top: 25px;
+      background: $tolopea;
+      border-radius: 7px;
+      display: flex;
+      flex-direction: row;
+
+      .image {
+        width: 191px;
+        height: 163px;
+        background-color: $jagger;
+        border-radius: 8px;
+        margin: 0 13px;
+        margin-right: 39px;
+      }
+
+      .right {
+        display: flex;
+        flex-direction: column;
+        height: 163px;
+        justify-content: space-between;
+        padding-right: 40px;
+        width: 100%;
+
+        .right__top {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 13px;
+
+          .text {
+            .title {
+              @include font($avenirmedium, 18px, 800);
+              line-height: 21px;
+              color: white;
+              cursor: pointer;
+            }
+
+            .description {
+              width: 429px;
+              @include font($helvetica, 13px, 500);
+              line-height: 19px;
+              letter-spacing: 0.0917647px;
+              color: $silver;
+            }
+          }
+
+          .buttons {
+            align-self: start;
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+
+        .info {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .instructor {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 225px;
+            justify-content: space-between;
+
+            .photo {
+              width: 42px;
+              height: 42px;
+            }
+
+            .instructor__right {
+              width: 173px;
+
+              .name {
+                @include font($avenirheavy, 15px, 500);
+                font-size: 15px;
+                text-align: center;
+                width: fit-content;
+              }
+
+              .reviews {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 30px;
+
+                .reviews_text {
+                  @include font($helvetica, 13px, 500);
+                }
+              }
+            }
+          }
+
+          .video {
+            display: flex;
+            flex-direction: column;
+            color: $lola;
+            width: fit-content;
+            @include font($helvetica, 13px, 400);
+
+            .line {
+              width: fit-content;
+
+              .line__text {
+                color: $buttercup;
+                @include font($avenirheavy, 13px, 500);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.star.medium i, .rating.medium .star i {
+  font-size: 18px;
+}
+
+.star.medium, .rating.medium .star {
+  width: 18px;
+}
+
+.vue-star-rating-rating-text {
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+}
+
+.recorded_class_pagination {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 70px;
+  margin-top: 20px;
+  color: $trendypink;
+  @include font($avenirheavy, 15px, 800);
+  align-self: flex-start;
+
+  .active {
+    color: $white;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,36 @@
+.section-title {
+  margin: 0;
+  color: $twilight;
+  @include font($avenirheavy, 20px, 800);
+}
+
+.contact-desktop {
+  margin: 150px auto;
+  width: 400px;
+
+  .section-title {
+    text-align: center;
+  }
+
+  .contact-form {
+    margin-top: 40px;
+  }
+}
+
+.contact {
+  .mobile-body {
+    padding: 0 23px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+.privacy-policy,
+.terms-of-use {
+  padding: 30px;
+}
+
+@import './profile/profile.scss';
+@import './feedback/feedback.scss';

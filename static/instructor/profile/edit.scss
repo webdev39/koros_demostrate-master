@@ -1,0 +1,326 @@
+.instructor-profile-edit {
+
+  margin: 50px auto;
+  border-radius: 7px;
+  
+
+  &.single {
+    width: 652px;
+  }
+
+  &.double {
+    width: 898px;
+
+    .double-profile {
+    
+      .half-profile {
+        padding: 0 60px 0 75px;
+      }
+    }
+
+    .change-password {
+      padding: 0 75px;
+    }
+
+    .button-group {
+      margin-top: 40px;
+      margin-left: 175px;
+      justify-content: flex-start;
+  
+    }
+
+    .profile-form {
+
+      &.common {
+        padding: 0 60px 0 75px;
+
+        .input-group {
+
+          textarea {
+            border-radius: 13px;
+          }
+        }
+      }
+    }
+    .change-password {
+        
+      padding: 0 60px 0 75px;
+    }
+  }
+
+  .block-edit {
+    background-color: $tolopea;
+
+    .instructor-main {
+      margin-bottom: 35px;
+    }
+
+    &.single {
+      padding: 80px 70px 80px 80px;
+
+      .profile-form {
+        .input-group {
+
+          &.bio {
+            align-items: flex-start;
+          }
+        }
+      }
+    }
+
+    &.double {
+      padding: 80px 0;
+
+      .change-password {
+        margin-top: 50px;
+
+        .profile-form {
+
+          input {
+            flex-grow: 1;
+            margin-left: 0;
+          }
+
+          label {
+            padding-right: 10px;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+
+    .form-title {
+      color: #a08fc2;
+      @include font($avenirheavy, 17px, 800);
+    }
+
+    .profile-form {
+
+      margin-top: 25px;
+
+      .input-group {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+        position: relative;
+
+        &.bio {
+          align-items: flex-start;
+        }
+
+        label {
+          @include font($sanfranciscotext, 15px, 400);
+          width: 100px;
+        }
+
+        input,
+        textarea {
+          width: 390px;
+          background-color: rgba(255, 255, 255, 0.1);
+          @include font($avenirmedium, 15px, 500);
+          padding: 10px 28px;
+          color: $white;
+          @include webkitInput;
+          box-sizing: border-box;
+        }
+
+        input {
+          border-radius: 28px;
+          width: calc(100% - 100px);
+        }
+
+        textarea {
+          resize: none;
+          @include focusBorders;
+          border-radius: 7px;
+          height: 133px;
+          width: calc(100% - 100px);
+        }
+      }
+    }
+  }
+
+  .change-password {
+    margin-top: 50px;
+  }
+
+  .button-group {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+
+    .btn {
+      width: 175px;
+
+      &.btn-primary {
+        margin-right: 40px;
+      }
+    }
+  }
+}
+
+// responsive
+.instructor-profile {
+
+  .mobile-body {
+    padding: 0 23px;
+  }
+
+  .user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $avenirheavy;
+    text-align: center;
+
+    .user__data {
+      margin: 15px 0 45px 0;
+
+      .user__name {
+        color: $white;
+        font-size: 18px;
+        margin-top: 10px;
+      }
+
+      .city {
+        font-size: 13px;
+        color: $pinkswan;
+        margin-top: 5px;
+      }
+    }
+
+    .avatar-wrapper {
+      position: relative;
+
+      .edit-photo {
+        font-size: 22px;
+        color: #706092;
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        transform: translate(-50%, 50%);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .profile-info {
+
+    .info-item {
+      border-bottom: 1px solid rgba(64, 54, 64, 0.5);
+    }
+
+    &.edit {
+      margin-top: 40px;
+
+      .item-title {
+        color: $twilight; 
+        @include font($avenirmedium, 13px, 300);
+      }
+
+      .mobile-input {
+  
+        input {
+          background-color: $blackcurrant;
+        }
+
+        .select {
+          .selected {
+            background-color: $blackcurrant;
+          }
+        }
+      }
+    }
+
+    .info-item {
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .item-data {
+      font-family: $helvetica;
+      font-size: 13px;
+
+      &.arrow {
+        fill: $white;
+        fill-opacity: 0.5;
+        cursor: pointer;
+      }
+    }
+
+    .info-item {
+      &.textarea {
+
+        flex-direction: column;
+
+        .item-title {
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    .mobile-input {
+
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      input {
+        background-color: $blackcurrant;
+        color: $white;
+        @include font($avenirmedium, 13px, 500);
+        border-radius: 4px;
+        text-align: right;
+        border: none;
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+          -webkit-box-shadow: 0 0 0 1000px $blackcurrant inset;
+          transition: background-color 5000s ease-in-out 0s;
+          -webkit-text-fill-color: $white;
+        }
+        &:-webkit-text-fill-color {
+          color: $white;
+        }
+        &:focus {
+          border: none !important;
+          background-color: #2b1e45;
+        }
+      }
+
+      textarea {
+        background-color: #2b1e45;
+        @include font($avenirmedium, 13px, 500);
+        color: $white;
+        resize: none;
+        height: 100px;
+        @include focusBorders;
+      }
+    }
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+
+  .instructor-profile-edit {
+
+    &.double {
+      width: auto;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .profile-edit {
+    width: 100%;
+  }
+}

@@ -1,0 +1,546 @@
+.back {
+  cursor: pointer;
+  width: fit-content;
+  margin-left: 25px;
+  display: none;
+  position: absolute;
+  top: 25px;
+
+  &.show {
+    display: block;
+  }
+}
+
+@each $section in forgot-password, reset-password, login, registration {
+  .koros__title {
+    width: 252px;
+    height: 73px;
+
+    .koros__img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+
+  .#{$section} {
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .#{$section}__form {
+    @if $section == registration {
+      @include authForm(100px);
+    } @else {
+      @include authForm(130px);
+    }
+
+    .title {
+      @include font($avenirheavy, 25px, 800);
+      @if $section == registration {
+        margin-bottom: 13px;
+      }
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+      border: 0 !important;
+      -webkit-text-fill-color: $white;
+      -webkit-box-shadow: 0 0 0 1000px $mulledwine inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    input::placeholder {
+      color: $white;
+    }
+
+    .submit:hover {
+      cursor: pointer;
+    }
+
+    .submit {
+      background: linear-gradient(
+        90deg,
+        rgba(67, 0, 167, 1) 0%,
+        rgba(137, 36, 136, 1) 51%,
+        rgba(208, 50, 109, 1) 100%
+      );
+      border: 0;
+      color: $white;
+      height: 54px;
+      line-height: 1;
+      width: 393px;
+      
+      margin-top: 8px;
+      border-radius: 50px;
+      padding: 17px 0;
+      background-clip: padding-box;
+      @include font($avenirheavy, 18px, 800);
+      @include focusBorders;
+      span {
+        font-size: 18px;
+      }
+    }
+
+    .form-input {
+      height: 51px;
+      width: 400px;
+      box-sizing: border-box;
+      padding: 0 30px;
+      margin-top: 10px;
+      @include font($sanfranciscotext, 14px, 400);
+    }
+
+    .form {
+      margin-top: 30px;
+    }
+  }
+
+  .login__img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .login__form {
+    .title {
+      margin-bottom: 30px;
+    }
+    .password {
+      margin-top: 15px;
+    }
+
+    .forgot-password {
+      color: $white;
+      text-decoration: none;
+      align-self: flex-end;
+      margin: 10px 15px 10px 0;
+      @include font($sanfranciscotext, 15px, 400);
+    }
+
+    &.password {
+      margin-top: 15px;
+    }
+  }
+
+  .registration__form {
+    .divider {
+      position: relative;
+      width: 369px;
+      margin: 20px 0;
+      text-align: center;
+      hr {
+        height: 1px;
+        background-color: $light-grey;
+        opacity: 0.33;
+        border: none;
+        position: absolute;
+        top: 30%;
+        width: 100%;
+        margin: 0;
+      }
+      span {
+        @include sanFranciscoText(15px, 500);
+        color: #999999;
+        padding: 0 13px;
+        position: relative;
+        background-color: #160028;
+      }
+    }
+    .social-signin {
+      width: 260px;
+      button {
+        width: 100%;
+        height: 52px;
+        font-size: 18px;
+        border-radius: 2px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.24), 0 0 1px rgba(0, 0, 0, 0.12);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include focusBorders;
+        span {
+          margin-right: 10px;
+          font-size: 26px;
+        }
+        &.apple {
+          margin-bottom: 10px;
+        }
+        &.google {
+          background-color: #dc4e41;
+          color: $white;
+        }
+      }
+    }
+    .terms {
+      margin: 30px 0;
+      text-align: center;
+      line-height: 1.5;
+      @include sanFranciscoText(15px, 400);
+      a {
+        text-decoration: none;
+        color: $light-pink;
+      }
+    }
+  }
+}
+.registration {
+  padding-top: 150px;
+}
+
+.login {
+  &.user {
+    padding-top: 140px;
+    padding-bottom: 100px;
+    min-height: 100vh;
+    background: url('/img/login_back.png');
+    background-size: 110%;
+    background-position: 50% 70%;
+    background-repeat: no-repeat;
+    background-color: #000;
+    .login__form {
+      margin-top: 348px;
+      .title {
+        margin-bottom: 25px;
+      }
+      .button-group {
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+      }
+      .submit {
+        width: 260px;
+        margin-top: 0;
+      }
+      .social {
+        width: 54px;
+        height: 54px;
+        font-size: 22px;
+        border-radius: 100%;
+        background-clip: padding-box;
+        cursor: pointer;
+        @include focusBorders;
+        &.google {
+          background-color: #dc4e41;
+          color: $white;
+        }
+      }
+      .mobile-social {
+        display: none;
+      }
+      hr {
+        margin: 30px 0;
+        background-color: #573b58;
+        opacity: 0.5;
+        width: 100%;
+        height: 1px;
+        border: none;
+      }
+      .divider {
+        display: none;
+      }
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 1000px transparent inset;
+      }
+      .form-input {
+        background-color: rgba(255, 255, 255, 0.24);
+      }
+    }
+    .sign-up {
+      font-size: 14px;
+      font-weight: 500;
+      a {
+        text-decoration: none;
+        color: $light-pink;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .back {
+    font-size: 30px;
+  }
+  @each $section in forgot-password, reset-password, login {
+    .koros__title {
+      width: 340px;
+      height: 75px;
+    }
+    .#{$section}__form {
+      width: 440px;
+
+      .title {
+        font-size: 29px;
+      }
+
+      .form,
+      .form-group,
+      .button-group
+      {
+        width: 100%;
+      }
+
+      .submit {
+        width: 100%;
+        font-size: 20px;
+      }
+      .form-input {
+        font-size: 17px;
+        width: 100%;
+      }
+    }
+  }
+  .login {
+    &.user {
+      background-size: 120%;
+      padding-top: 100px;
+      .koros__title {
+        width: 252px;
+        height: 73px;
+      }
+      .login__form {
+        .title {
+          font-size: 25px;
+        }
+        .submit {
+          width: 260px;
+          font-size: 18px;
+        }
+        .form-input {
+          width: 400px;
+          font-size: 15px;
+        }
+        .forgot-password {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  .login__form {
+    .forgot-password {
+      font-size: 17px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .back {
+    font-size: 40px;
+  }
+  .login {
+    &.user {
+      background-size: 130%;
+      background-position: 50% 0;
+      .mobile-divider {
+        display: block;
+      }
+      .mobile-social {
+        display: flex;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .koros__title {
+    width: 252px;
+    height: 73px;
+  }
+  @each $section in forgot-password, reset-password, login {
+
+    .#{$section} {
+      margin-bottom: 80px;
+      padding: 90px 40px 40px 40px;
+    }
+  }
+  .login {
+    &.user {
+      padding-top: 70px;
+      background-size: 140%;
+      background-position: 50% 10%;
+      .form-input {
+        width: 400px;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  .back {
+    font-size: 25px;
+  }
+  @each $section in forgot-password, reset-password, login {
+    width: 100%;
+    padding: 0 40px;
+
+    .koros__title {
+      width: 300px;
+      height: 93px;
+    }
+    .#{$section}__form {
+      width: 100%;
+
+      .form {
+        width: 100%;
+      }
+
+      .title {
+        font-size: 25px;
+      }
+
+      .button-group {
+        width: 100%;
+      }
+
+      .submit {
+        width: 100%;
+        font-size: 18px;
+      }
+
+      .form-group {
+        width: 100%;
+      }
+
+      .form-input {
+        width: 100%;
+        font-size: 13px;
+      }
+    }
+  }
+  .login__form {
+    width: 100%;
+
+    .forgot-password {
+      font-size: 14px;
+    }
+  }
+  .login {
+    &.user {
+      background: url('/img/login_back_mobile.png');
+      background-position-x: 50%;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-color: $blackcurrant;
+      padding: 0 40px;
+      margin-bottom: 40px;
+      .koros__title {
+        display: none;
+      }
+      .login__form {
+        width: 100%;
+        margin-top: 300px;
+        padding: 0;
+        .title {
+          display: none;
+        }
+        .form-group {
+          width: 100%;
+        }
+        .form-input {
+          width: 100%;
+          font-size: 13px;
+        }
+        .button-group {
+          width: 100%;
+        }
+        .submit {
+          width: 100%;
+          font-size: 16px;
+        }
+        .forgot-password {
+          font-size: 13px;
+        }
+        .mobile-social {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          .apple {
+            margin-right: 75px;
+          }
+        }
+        .divider {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          padding: 40px 0 30px 0;
+          hr {
+            height: 1px;
+            background-color: $light-grey;
+            opacity: 0.33;
+            border: none;
+            margin: 0;
+          }
+          span {
+            @include sanFranciscoText(13px, 500);
+            color: #999999;
+            padding: 0 13px;
+          }
+        }
+        .sign-up {
+          font-size: 12px;
+          margin-top: 45px;
+        }
+      }
+    }
+  }
+
+  .registration {
+    padding: 90px 40px 40px 40px;
+    .koros__title {
+      width: 173px;
+      height: 50px;
+    }
+    .registration__form {
+      margin-top: 40px;
+      width: 100%;
+      .form-input {
+        width: 100%;
+        font-size: 13px;
+      }
+      .submit {
+        width: 100%;
+        font-size: 16px;
+      }
+      .divider {
+        width: calc(100% - 30px);
+        span {
+          @include sanFranciscoText(13px, 500);
+          padding: 0 10px;
+        }
+      }
+      .social-signin {
+        width: calc(100% - 50px);
+        button {
+          height: 47px;
+          font-size: 16px;
+          span {
+            font-size: 23px;
+          }
+        }
+      }
+      .terms {
+        width: calc(100% - 50px);
+        @include sanFranciscoText(13px, 400);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  @each $section in forgot-password, reset-password, login {
+    .koros__title {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.form-input_sign-up {
+  margin-top: 30px;
+}
